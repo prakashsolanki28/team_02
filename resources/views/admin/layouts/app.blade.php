@@ -28,9 +28,9 @@
 					</button>
 					<div class="collapse" id="orders-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">Syallbus</a></li>
-							<li><a href="#" class="link-dark rounded">Courses</a></li>
-							<li><a href="#" class="link-dark rounded">Time Table</a></li>
+							<li><a href="{{ url('admin/syllabus') }}" class="link-dark rounded">Syallbus</a></li>
+							<li><a href="{{ url('admin/courses') }}" class="link-dark rounded">Courses</a></li>
+							<li><a href="{{ url('admin/time-table') }}" class="link-dark rounded">Time Table</a></li>
 						</ul>
 					</div>
 				</li>

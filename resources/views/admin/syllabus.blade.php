@@ -10,7 +10,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6">
-        <h1>Gallery</h1>
+        <h1>Syllabus</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -35,12 +35,12 @@
   <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addSyllabus">Add Syllabus</button>
 </div><br/><br/>
 <div class="card p-3">
-  <table id="example" class="table table-striped" style="width:100%">
+  <table id="example" class="table table-striped w-100">
     <thead>
       <tr>
-        <th>id</th>
+        <th>Id</th>
         <th>Course</th>
-        <th>Syllabus File</th>
+        <th>File</th>
         <th>Options</th>
       </tr>
     </thead>

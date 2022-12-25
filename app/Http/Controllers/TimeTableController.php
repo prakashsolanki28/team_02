@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TimeTable;
+use App\Models\Cources;
 
 class TimeTableController extends Controller
 {
@@ -15,13 +16,14 @@ class TimeTableController extends Controller
     public function index()
     {
         $time_table = TimeTable::get();
-        return view('time_table');
+        return view('time_table', compact('time_table'));
     }
 
     public function adminIndex()
     {
         $time_table = TimeTable::get();
-        return view('admin.time_table');
+        $courses = Cources::get();
+        return view('admin.time_table', compact('time_table', 'courses'));
     }
 
 
