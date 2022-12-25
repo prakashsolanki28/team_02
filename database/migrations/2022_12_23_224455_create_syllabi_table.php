@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('syllabi', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('cource_id');
-            $table->String('file_name');
+            $table->String('file_name')->nullable();
             $table->timestamps();
         });
     }

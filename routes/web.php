@@ -42,24 +42,25 @@ Route::group(['middleware'=>['auth']], function()
         Route::prefix('gallery')->group(function(){
             Route::get('/',[App\Http\Controllers\GalleryController::class, 'adminIndex']);
             Route::post('add',[App\Http\Controllers\GalleryController::class, 'store']);
-            Route::get('delete/{id}',[App\Http\Controllers\GalleryController::class, 'destory']);
+            Route::post('file',[App\Http\Controllers\GalleryController::class, 'storeImage']);
+            Route::get('delete/{id}',[App\Http\Controllers\GalleryController::class, 'destroy']);
         });
         Route::prefix('syllabus')->group(function(){
             Route::get('/',[App\Http\Controllers\SyllabusController::class, 'adminIndex']);
             Route::post('add',[App\Http\Controllers\SyllabusController::class, 'store']);
-            Route::get('delete/{id}',[App\Http\Controllers\SyllabusController::class, 'destory']);
+            Route::get('delete/{id}',[App\Http\Controllers\SyllabusController::class, 'destroy']);
         });
 
         Route::prefix('courses')->group(function(){
             Route::get('/',[App\Http\Controllers\CoursesController::class, 'adminIndex']);
-            Route::get('add',[App\Http\Controllers\CoursesController::class, 'store']);
-            Route::get('delete/{id}',[App\Http\Controllers\CoursesController::class, 'destory']);
+            Route::post('add',[App\Http\Controllers\CoursesController::class, 'store']);
+            Route::get('delete/{id}',[App\Http\Controllers\CoursesController::class, 'destroy']);
         });
 
         Route::prefix('time-table')->group(function(){
             Route::get('/',[App\Http\Controllers\TimeTableController::class, 'adminIndex']);
             Route::get('add',[App\Http\Controllers\TimeTableController::class, 'store']);
-            Route::get('delete/{id}',[App\Http\Controllers\TimeTableController::class, 'destory']);
+            Route::get('delete/{id}',[App\Http\Controllers\TimeTableController::class, 'destroy']);
         });
     });
 });

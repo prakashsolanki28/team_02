@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Syllabus;
+use App\Models\Cources;
 
 class SyllabusController extends Controller
 {
@@ -14,13 +15,15 @@ class SyllabusController extends Controller
      */
     public function index()
     {
-        $syllabus = Syllabus::get();
-        return view('syllabus', compact('syllabus'));
+        $syllabuses = Syllabus::get();
+        return view('syllabus', compact('syllabuses'));
     }
 
     public function adminIndex()
     {
-        return view('admin.syllabus');
+        $syllabuses = Syllabus::get();
+        $courses = Cources::get();
+        return view('admin.syllabus', compact('syllabuses','courses'));
     }
 
     /**
@@ -50,10 +53,9 @@ class SyllabusController extends Controller
             $msg = "Added Successfully.";
         }
 
-        $add_syllabus_table->cource_id = $request->course_id;
-        $add_syllabus_table->file_name = $request->file_name;
+        $add_syllabus_table->cource_id = $request->course;
         $add_syllabus_table->save();
-        return back()->with('Success', $msg);
+        return back()->with('success', $msg);
     }
 
     /**
@@ -98,7 +100,7 @@ class SyllabusController extends Controller
      */
     public function destroy($id)
     {
-        $syllabus = Syllabus::destroy('id');
-        return back();
+        Syllabus::destroy($id);
+        return back()->with('success','You have successfully Removed Syllabus.');
     }
 }

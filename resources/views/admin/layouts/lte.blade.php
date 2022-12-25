@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="{{ url('dist/css/adminlte.min.css')}} ">
   <!-- hello -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap/bootstrap.min.css') }}">
   @yield('style')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -159,12 +158,8 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">MBM</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2022-2023</strong>
   </footer>
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -175,35 +170,15 @@
 
 <!-- jQuery -->
 <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap -->
 <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- Ekko Lightbox -->
-<script src="{{ url('plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
-<!-- AdminLTE App -->
 <script src="{{ url('dist/js/adminlte.min.js') }}"></script>
-<!-- Filterizr-->
-<script src="{{ url('plugins/filterizr/jquery.filterizr.min.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/min/dropzone.min.js"></script>
 <script src="{{ url('dist/js/demo.js') }}"></script>
-<!-- Page specific script -->
-<script>
-  $(function () {
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
-        alwaysShowClose: true
-      });
-    });
+@yield('script')
 
-    $('.filter-container').filterizr({gutterPixels: 3});
-    $('.btn[data-filter]').on('click', function() {
-      $('.btn[data-filter]').removeClass('active');
-      $(this).addClass('active');
-    });
-  })
-</script>
 
-@yeild('script')
 </body>
 </html>
 

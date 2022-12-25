@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('cource_id');
             $table->String('title');
-            $table->String('file');
+            $table->String('file')->nullable();
             $table->timestamps();
         });
     }

@@ -36,6 +36,8 @@
 
 @endsection
 @section('script')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/min/dropzone.min.js"></script>
 <script type="text/javascript">
 	
 	var myDropzone = new Dropzone("#kt_dropzonejs_example_1", {

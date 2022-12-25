@@ -52,9 +52,8 @@ class GalleryController extends Controller
         }
 
         $add_gallery_table->title = $request->title;
-        $add_gallery_table->image = $request->image;
         $add_gallery_table->save();
-        return back()->with('Success', $msg);
+        return back()->with('success', $msg);
     }
 
     public function storeImage(Request $request)
@@ -64,7 +63,7 @@ class GalleryController extends Controller
         $destinationPath = 'gallery';
         $name = 'image-'.$time.'.'.$request->file->extension();
         $request->file->move(public_path($destinationPath), $name);
-        $galleryTable->file = $name;
+        $galleryTable->image = $name;
         $galleryTable->save();
         return back()->with('success','You have successfully uploaded file.');
     }
@@ -112,6 +111,6 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $gallery = Gallery::destroy($id);
-        return back();
+        return back()->with('success','You have successfully Removed Image.');
     }
 }

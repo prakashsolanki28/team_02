@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cources;
-
+use App\Models\Syllabus;
 class CoursesController extends Controller
 {
     /**
@@ -55,7 +55,7 @@ class CoursesController extends Controller
         $add_course_table->stream = $request->stream;
         $add_course_table->duration = $request->duration;
         $add_course_table->save();
-        return back()->with('Success', $msg);
+        return back()->with('success', $msg);
     }
 
     /**
@@ -100,7 +100,8 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        $course = Cources::destroy($id);
-        return back();
+        Syllabus::where('cource_id',$id)->delete(); 
+        Cources::destroy($id);
+        return back()->with('success','You have successfully Removed course.');
     }
 }
